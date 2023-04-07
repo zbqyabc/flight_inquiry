@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"flight_inquiry/router"
+)
 
 func main() {
-	fmt.Println("golang 环境测试")
+	e := router.Router()
+	e.Run(":8080")
 }
