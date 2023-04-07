@@ -10,10 +10,8 @@ import (
 
 func FlightList(c *gin.Context) {
 
-	start_city := c.GetString("start_city")
-	arrive_city := c.GetString("arrive_city")
-
-	fmt.Println("查看数据")
+	start_city := c.Query("start_city")
+	arrive_city := c.Query("arrive_city")
 
 	fmt.Println(start_city, arrive_city)
 
