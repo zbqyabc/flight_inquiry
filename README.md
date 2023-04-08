@@ -17,13 +17,12 @@ http://localhost:8080/flight/get_new_list
 返回参数
 ```返回参数
 {
-    "arrFlight": [
+    "code": 200,
+    "flightArr": [
         "a",
         "f"
     ],
-    "code": 200,
-    "msg": "Success",
-    "newList": [
+    "flightList": [
         [
             "a",
             "b"
@@ -44,6 +43,7 @@ http://localhost:8080/flight/get_new_list
             "e",
             "f"
         ]
-    ]
+    ],
+    "msg": "Success"
 }
 ```
