@@ -18,32 +18,34 @@ http://localhost:8080/flight/get_new_list
 ```返回参数
 {
     "code": 200,
-    "flightArr": [
-        "a",
-        "f"
-    ],
-    "flightList": [
-        [
+    "data": {
+        "arrFlight": [
             "a",
-            "b"
-        ],
-        [
-            "b",
-            "c"
-        ],
-        [
-            "c",
-            "d"
-        ],
-        [
-            "d",
-            "e"
-        ],
-        [
-            "e",
             "f"
+        ],
+        "listFlight": [
+            [
+                "a",
+                "b"
+            ],
+            [
+                "b",
+                "c"
+            ],
+            [
+                "c",
+                "d"
+            ],
+            [
+                "d",
+                "e"
+            ],
+            [
+                "e",
+                "f"
+            ]
         ]
-    ],
+    },
     "msg": "Success"
 }
 ```
