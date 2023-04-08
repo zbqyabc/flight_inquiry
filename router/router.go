@@ -9,6 +9,8 @@ import (
 func Router() *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/flight_list", service.FlightList)
+	//排序后的新航线
+	r.POST("flight/get_new_list", service.FlightList)
+
 	return r
 }
