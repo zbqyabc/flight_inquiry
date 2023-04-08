@@ -9,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin/binding"
 )
 
+// 获取排序后的航线列表
 func FlightList(c *gin.Context) {
 	if err := c.ShouldBindBodyWith(&models.FlightBody, binding.JSON); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -17,15 +18,15 @@ func FlightList(c *gin.Context) {
 		return
 	}
 
-	newList := utils.GetNewSortArr(models.FlightBody.FlightList)
+	newFlightList := utils.GetNewSortList(models.FlightBody.FlightList)
 	var arrFlight []string //航线起始
-	arrFlight = append(arrFlight, newList[0][0])
-	arrFlight = append(arrFlight, newList[len(newList)-1][1])
+	arrFlight = append(arrFlight, newFlightList[0][0])
+	arrFlight = append(arrFlight, newFlightList[len(newFlightList)-1][1])
 
 	c.JSON(http.StatusOK, gin.H{
 		"code":      200,
 		"msg":       "Success",
-		"newList":   newList,
+		"newList":   newFlightList,
 		"arrFlight": arrFlight,
 	})
 }
