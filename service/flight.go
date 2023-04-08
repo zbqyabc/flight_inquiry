@@ -3,19 +3,17 @@ package service
 import (
 	"flight_inquiry/models"
 	"flight_inquiry/utils"
-	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
 )
 
 func FlightList(c *gin.Context) {
-	if err := c.BindJSON(&models.FlightBody); err != nil {
-		c.JSON(http.StatusOK, gin.H{
-			"code": -1,
-			"msg":  "Param Error!",
+	if err := c.ShouldBindBodyWith(&models.FlightBody, binding.JSON); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"msg": "Param Error",
 		})
-		log.Fatal(err)
 		return
 	}
 
