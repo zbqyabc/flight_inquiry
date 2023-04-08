@@ -19,9 +19,15 @@ func FlightList(c *gin.Context) {
 		return
 	}
 
+	newList := utils.GetNewSortArr(models.FlightBody.FlightList)
+	var arrFlight []string //航线起始
+	arrFlight = append(arrFlight, newList[0][0])
+	arrFlight = append(arrFlight, newList[len(newList)-1][1])
+
 	c.JSON(http.StatusOK, gin.H{
-		"code": 200,
-		"msg":  "Success",
-		"data": utils.GetNewSortArr(models.FlightBody.FlightList),
+		"code":      200,
+		"msg":       "Success",
+		"newList":   newList,
+		"arrFlight": arrFlight,
 	})
 }
