@@ -1,6 +1,7 @@
 ## 请求地址
 http://localhost:8080/flight/get_new_list
 
+请求参数
 ```请求参数
 {
     "flight_list":[
@@ -13,7 +14,7 @@ http://localhost:8080/flight/get_new_list
     ]
 }
 ```
-
+返回参数
 ```返回参数
 {
     "arrFlight": [
